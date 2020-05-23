@@ -5,18 +5,22 @@ permalink: /galleries/
 order: 8
 ---
 <div>
-{% for gal in site.galleries %}
+  {% assign galleries_list = site.galleries | sort: "order" %}
+  {% for gal in galleries_list %}
   <div>
-    <a href="{{ gal.url | relative_url}}">{{gal.description}}</a>
+    <a href="{{ gal.url | relative_url}}">{{gal.name}}</a>
     {% capture best_img_url %}{{gal.folder}}/{{gal.best_image}}{% endcapture %}
-
-    {% if jekyll.environment == "production" %}
-    {% capture best_img_thumb_url %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{best_img_url}}&w=600{% endcapture %}
-    <img src="{{best_img_thumb_url}}"/>
-    {% else %}
-    <img src="{{best_img_url}}"/>
-    {% endif %}
+    <div>{{gal.description}}</div>
+    <a href="{{ gal.url | relative_url}}">
+      {% if jekyll.environment == "production" %}
+      {% capture best_img_thumb_url
+      %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{best_img_url}}&w=800{% endcapture %}
+      <img src="{{best_img_thumb_url}}"/>
+      {% else %}
+      <img src="{{best_img_url}}"/>
+      {% endif %}
+    </a>
     <hr>
   </div>
-{%endfor%}
+  {%endfor%}
 </div>

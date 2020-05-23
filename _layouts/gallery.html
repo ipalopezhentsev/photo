@@ -3,7 +3,8 @@ layout: default
 ---
 <div class="page">
   <h1 class="page-title">{{ page.title }}</h1>
-  <div>Click on an image to open it in full size</div>
+  <div>{{page.description}}</div>
+  <small>Click on an image to open it in full size</small>
   <div>
     {% for img in page.images %}
     <figure>
@@ -11,7 +12,7 @@ layout: default
       <a href="{{img.image.url}}">
         <!--img: thumbnail-->
         {% if jekyll.environment == "production" %}
-        {% capture thumb_url %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{page.folder}}/{{img.image.url}}&w=600{% endcapture %}
+        {% capture thumb_url %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{page.folder}}/{{img.image.url}}&w=800{% endcapture %}
         <img src="{{thumb_url}}" alt="{{img.image.description}}"/>
         {% else %}
         <img src="{{img.image.url}}" alt="{{img.image.description}}"/>
