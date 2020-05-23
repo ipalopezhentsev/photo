@@ -8,9 +8,7 @@ layout: default
   {{ content }}
 </div>
 
-{% unless page.disableComments == true %}
 {% include comments.html %}
-{% endunless %}
 
 {% if site.related_posts.size >= 1 %}
 <div class="related">
