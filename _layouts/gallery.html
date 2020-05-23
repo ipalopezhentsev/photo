@@ -10,7 +10,12 @@ layout: default
       <!--link: full image-->
       <a href="{{img.image.url}}">
         <!--img: thumbnail-->
+        {% if jekyll.environment == "production" %}
+        {% capture thumb_url %}{{site.weserve_url}}{{img.image.url}}&w=300{% endcapture %}
+        <img src="{{thumb_url}}" alt="{{img.image.description}}"/>
+        {% else %}
         <img src="{{img.image.url}}" alt="{{img.image.description}}"/>
+        {% endif %}
       </a>
       <figcaption>{{img.image.d}}</figcaption>
 

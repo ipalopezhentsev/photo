@@ -11,8 +11,13 @@ order: 8
     {% capture best_img_url %}
     {{gal.folder}}/{{gal.best_image}}
     {%endcapture%}
-    <!--<img src="{{gal.folder | append: gal.best_image}}"/>-->
+
+    {% if jekyll.environment == "production" %}
+    {% capture best_img_thumb_url %}{{site.weserve_url}}{{img.image.url}}&w=600{% endcapture %}
+    <img src="{{best_img_thumb_url}}"/>
+    {% else %}
     <img src="{{best_img_url}}"/>
+    {% endif %}
     <hr>
   </div>
 {%endfor%}
