@@ -14,7 +14,7 @@ order: 8
     <a href="{{ gal.url | relative_url}}">
       {% if jekyll.environment == "production" %}
       {% capture best_img_thumb_url
-      %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{best_img_url}}&w=800{% endcapture %}
+      %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{best_img_url}}&w=600{% endcapture %}
       <img src="{{best_img_thumb_url}}"/>
       {% else %}
       <img src="{{best_img_url}}"/>

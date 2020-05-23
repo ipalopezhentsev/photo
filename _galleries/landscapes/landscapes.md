@@ -18,4 +18,16 @@ images:
       dt: 2020
       p: Ivanteevka, near Moscow 
       tw: Nikon F100, AF-S 24-120/4G, Fuji Pro 400H, digitized with Nikon D750 and RawTherapee 5.9
+  - image:
+      url: 1907-1908-1-pokrovskoe.jpg
+      d: A city park
+      tw: Nikon F100, AF-S 16-35/4G, Agfa Vista 200, digitized with Nikon D750 and RawTherapee 5.9
+      dt: 2019
+      p: Moscow
+  - image:
+      url: 1907-1908-1-clover.jpg
+      d: Just flowers in a city park
+      tw: Nikon F100, AF-S 16-35/4G, Agfa Vista 200, digitized with Nikon D750 and RawTherapee 5.9
+      dt: 2019
+      p: Moscow
 ---
