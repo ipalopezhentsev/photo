@@ -13,7 +13,7 @@ order: 8
     {%endcapture%}
 
     {% if jekyll.environment == "production" %}
-    {% capture best_img_thumb_url %}{{site.weserve_url}}{{best_img_url | absolute_url}}&w=600{% endcapture %}
+    {% capture best_img_thumb_url %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{best_img_url}}&w=600{% endcapture %}
     <img src="{{best_img_thumb_url}}"/>
     {% else %}
     <img src="{{best_img_url}}"/>
