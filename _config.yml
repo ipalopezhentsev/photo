@@ -19,7 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Photo blog
-tagline: tagline
+tagline: by Ilya Palopezhentsev
 email: iliks@mail.ru
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -30,8 +30,7 @@ url: "https://ipalopezhentsev.github.io" # the base hostname & protocol for your
 markdown: kramdown
 github_username:  ipalopezhentsev
 paginate: 5
-#TODO!!!
-google_analytics_id: #UA-XXXX-Y
+google_analytics_id: UA-167439711-1
 
 # Build settings
 #theme: minima
