@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<div class="page">
+  <h1 class="page-title">{{ page.title }}</h1>
+  <div>Click on an image to open it in full size</div>
+  <div>
+    {% for img in page.images %}
+    <figure>
+      <!--link: full image-->
+      <a href="{{img.image.url}}">
+        <!--img: thumbnail-->
+        <img src="{{img.image.url}}" alt="{{img.image.description}}"/>
+      </a>
+      <figcaption>{{img.image.d}}</figcaption>
+
+      {% if img.image.p %}
+      <figcaption>Place: {{img.image.p}}</figcaption>
+      {% endif %}
+
+      {% if img.image.tw %}
+      <figcaption>Taken with: {{img.image.tw}}</figcaption>
+      {% endif %}
+
+      {% if img.image.dt %}
+      <figcaption>Date: {{img.image.dt}}</figcaption>
+      {% endif %}
+    </figure>
+    <hr>
+    {% endfor %}
+  </div>
+  <!--{{ content }}-->
+</div>

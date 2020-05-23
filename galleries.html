@@ -1,0 +1,19 @@
+---
+layout: page
+title: Galleries
+permalink: /galleries/
+order: 8
+---
+<div>
+{% for gal in site.galleries %}
+  <div>
+    <a href="{{ gal.url | relative_url}}">{{gal.description}}</a>
+    {% capture best_img_url %}
+    {{gal.folder}}/{{gal.best_image}}
+    {%endcapture%}
+    <!--<img src="{{gal.folder | append: gal.best_image}}"/>-->
+    <img src="{{best_img_url}}"/>
+    <hr>
+  </div>
+{%endfor%}
+</div>
