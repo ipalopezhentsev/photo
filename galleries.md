@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Gallery
-permalink: /gallery/
+title: Galleries
+permalink: /galleries/
 order: 8
 ---
 can make "gallery" layout and make several galleries!
