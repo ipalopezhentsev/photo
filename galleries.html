@@ -8,9 +8,7 @@ order: 8
 {% for gal in site.galleries %}
   <div>
     <a href="{{ gal.url | relative_url}}">{{gal.description}}</a>
-    {% capture best_img_url %}
-    {{gal.folder}}/{{gal.best_image}}
-    {%endcapture%}
+    {% capture best_img_url %}{{gal.folder}}/{{gal.best_image}}{% endcapture %}
 
     {% if jekyll.environment == "production" %}
     {% capture best_img_thumb_url %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{best_img_url}}&w=600{% endcapture %}
