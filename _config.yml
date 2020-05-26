@@ -32,8 +32,8 @@ github_username:  ipalopezhentsev
 paginate: 5
 google_analytics_id: UA-167439711-1
 weserve_url: https://images.weserv.nl/?url=
-galleries_width: 400
-gallery_width: 600
+galleries_width: 500
+gallery_width: 800
 
 # Build settings
 plugins:
