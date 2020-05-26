@@ -33,7 +33,7 @@ paginate: 5
 google_analytics_id: UA-167439711-1
 weserve_url: https://images.weserv.nl/?url=
 galleries_width: 400
-gallery_width: 800
+gallery_width: 700
 
 # Build settings
 plugins:
