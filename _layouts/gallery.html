@@ -12,7 +12,7 @@ layout: default
       <a href="{{img.image.url}}">
         <!--img: thumbnail-->
         {% if jekyll.environment == "production" %}
-        {% capture thumb_url %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{page.folder}}/{{img.image.url}}&w=800{% endcapture %}
+        {% capture thumb_url %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{page.folder}}/{{img.image.url}}&w=1000{% endcapture %}
         <img src="{{thumb_url}}" alt="{{img.image.description}}"/>
         {% else %}
         <img src="{{img.image.url}}" alt="{{img.image.description}}"/>
