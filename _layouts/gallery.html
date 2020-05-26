@@ -12,24 +12,24 @@ layout: default
       <a href="{{img.image.url}}">
         <!--img: thumbnail-->
         {% if jekyll.environment == "production" %}
-        {% capture thumb_url %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{page.folder}}/{{img.image.url}}&w=1000{% endcapture %}
+        {% capture thumb_url %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{page.folder}}/{{img.image.url}}&w={{site.gallery_width}}{% endcapture %}
         <img src="{{thumb_url}}" alt="{{img.image.description}}"/>
         {% else %}
-        <img src="{{img.image.url}}" alt="{{img.image.description}}"/>
+        <img src="{{img.image.url}}" alt="{{img.image.description}}" width="{{site.gallery_width}}"/>
         {% endif %}
       </a>
       <figcaption>{{img.image.d}}</figcaption>
 
       {% if img.image.p %}
-      <figcaption>Place: {{img.image.p}}</figcaption>
+      <figcaption><b>Place</b>: {{img.image.p}}</figcaption>
       {% endif %}
 
       {% if img.image.tw %}
-      <figcaption>Taken with: {{img.image.tw}}</figcaption>
+      <figcaption><b>Taken with</b>: {{img.image.tw}}</figcaption>
       {% endif %}
 
       {% if img.image.dt %}
-      <figcaption>Date: {{img.image.dt}}</figcaption>
+      <figcaption><b>Date</b>: {{img.image.dt}}</figcaption>
       {% endif %}
     </figure>
     <hr>

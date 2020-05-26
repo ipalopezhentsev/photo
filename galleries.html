@@ -14,10 +14,10 @@ order: 8
     <a href="{{ gal.url | relative_url}}">
       {% if jekyll.environment == "production" %}
       {% capture best_img_thumb_url
-      %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{best_img_url}}&w=300{% endcapture %}
+      %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{best_img_url}}&w={{site.galleries_width}}{% endcapture %}
       <img src="{{best_img_thumb_url}}"/>
       {% else %}
-      <img src="{{best_img_url}}"/>
+      <img src="{{best_img_url}}" width="{{site.galleries_width}}"/>
       {% endif %}
     </a>
     <hr>
