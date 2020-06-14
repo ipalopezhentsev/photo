@@ -152,3 +152,5 @@ Here I list some tips that didn't find their way into the main text.
 
 I hope you will enjoy RawTherapee! Please leave some comments below if my article has helped you. I will try to answer any questions too.
 Be sure to check my gallery on this site, it contains other conversions from RawTherapee.
+
+P.S. Big thanks for Sroyon Mukherjee who liked my initial conversion results & suggested me to write the article.
