@@ -155,7 +155,7 @@ Here I list some tips that didn't find their way into the main text.
 If you're interested, all the photos in this article were shot with Nikon F100/Nikkor AF-S 28/1.8G and were digitized using manual Micro Nikkor AI-S 55/2.8 lens set on Nikon D750, mounted on a macro rail for precise focusing. Film was backlit with Nanguang CN-T96 video light which you can get non-expensively at Aliexpress or eBay.
 
 I hope you will enjoy RawTherapee! Please leave some comments below if my article has helped you. I will try to answer any questions too.
-Be sure to check my gallery on this site, it contains other conversions from RawTherapee.
+Be sure to check my [gallery](https://ipalopezhentsev.github.io/photo/galleries/) on this site, it contains other conversions from RawTherapee.
 Maybe one day I'll also describe my home-built scanning rig in another article.
 
 P.S. Big thanks to *Sroyon Mukherjee* who liked my initial conversion results & suggested me to write the article. You can read his articles for [35mmc.com here](https://www.35mmc.com/author/sroyon/).
