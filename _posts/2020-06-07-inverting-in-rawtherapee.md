@@ -139,7 +139,7 @@ The only real need to export the file to TIFF appears if you want to: a) Use spo
 1. So, we've processed just one frame. Now you're maybe thinking whether you have to sit through the whole roll doing the same stuff. No! You've done the great part already! When you are totally happy with one frame, just select it in the filmstrip, press Ctrl/Cmd-C, then select next frame having just baseline conversion and press Ctrl/Cmd-V on it (copying/pasting the "processing profile" in RawTherapee's parlance). Then double click on the image you've pasted the settings to and apply just minimal edits which are needed because it's, well, another frame with its own histogram - you need to touch just: a) Curve 1 and Curve 2; b) White balance
 1. So for example here I've applied the above copying for the next frame `Dslr0012.NEF` and just edited WB a bit:
 ![FinalImage2](/photo/assets/images/articles/inverting-in-rt/Dslr0012.jpg)
-1. Usually you *don't* have to change anything else. 'Usually' means there may appear some frames, often under or overexposed that require touching the color coefficients first, over time you will recognise such frames and the direction in which you need to nudge the coefficients to bring colors back to good starting point.
+1. Usually you *don't* have to change anything else. 'Usually' means there may appear some frames, often under or overexposed, that require touching the color coefficients first, over time you will recognise such frames and the direction in which you need to nudge the coefficients to bring colors back to good starting point.
 
 # Some closing tips
 Here I list some tips that didn't find their way into the main text.
