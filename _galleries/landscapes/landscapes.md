@@ -30,4 +30,16 @@ images:
       tw: Nikon F100, AF-S 16-35/4G, Agfa Vista 200, digitized with Nikon D750 and RawTherapee 5.9
       dt: 2019
       p: Moscow
+  - image:
+      url: 1908-1-sunset.jpg
+      d: Just a sunset on a vaction
+      tw: Nikon F100, AF-S 28/1.8G, Kodak Portra 160, digitized with Nikon D750 and RawTherapee 5.9
+      dt: 2019
+      p: Montenegro, near Sutomore town
+  - image:
+      url: 1906-1-V-forest.jpg
+      d: Crossroads in the park
+      tw: Nikon F100, AF-S 28/1.8G, Kodak ProImage 100, digitized with Nikon D750 and RawTherapee 5.9
+      dt: 2019
+      p: Moscow
 ---

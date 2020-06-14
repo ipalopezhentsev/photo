@@ -152,7 +152,7 @@ Here I list some tips that didn't find their way into the main text.
 - One last measure to use to get good colors (but only after you've exhausted all the other ways) is to use Lab color space editing in RawTherapee. There you can selectively remap colors, e.g. turn reds to greens etc. RawTherapee provides really advanced tools for this.
 
 # Conclusion
-If you're interested, all the photos in this article were shot with Nikon F100/Nikkor AF-S 28/2.8 and were digitized using manual Micro Nikkor AI-S 55/2.8 lens set on Nikon D750, mounted on a macro rail for precise focusing. Film was backlit with Nanguang CN-T96 video light which you can get non-expensively at Aliexpress or eBay.
+If you're interested, all the photos in this article were shot with Nikon F100/Nikkor AF-S 28/1.8G and were digitized using manual Micro Nikkor AI-S 55/2.8 lens set on Nikon D750, mounted on a macro rail for precise focusing. Film was backlit with Nanguang CN-T96 video light which you can get non-expensively at Aliexpress or eBay.
 
 I hope you will enjoy RawTherapee! Please leave some comments below if my article has helped you. I will try to answer any questions too.
 Be sure to check my gallery on this site, it contains other conversions from RawTherapee.
