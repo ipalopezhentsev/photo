@@ -158,4 +158,4 @@ I hope you will enjoy RawTherapee! Please leave some comments below if my articl
 Be sure to check my gallery on this site, it contains other conversions from RawTherapee.
 Maybe one day I'll also describe my home-built scanning rig in another article.
 
-P.S. Big thanks for *Sroyon Mukherjee* who liked my initial conversion results & suggested me to write the article. You can read his articles for [35mmc.com here](https://www.35mmc.com/author/sroyon/).
+P.S. Big thanks to *Sroyon Mukherjee* who liked my initial conversion results & suggested me to write the article. You can read his articles for [35mmc.com here](https://www.35mmc.com/author/sroyon/).
