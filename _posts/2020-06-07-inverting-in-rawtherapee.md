@@ -100,6 +100,7 @@ For using the conversion stage workflow below it is assumed you take the followi
 ## Conversion stage
 
 The description below assumes you followed the steps in the DSLR shooting stage described above.
+Don't be intimidated by the apparent length of the steps below, I'm just explaining it in all details so you can get to good result on your own frames and don't miss some important thing. The main idea that I'm going to show is to do correct conversion of just one frame which you then can copy over to all the rest on the roll. After a couple of rolls you will get proficient at it.
 
 1. First of all, ensure you have RawTherapee 5.9, not earlier versions, because there were important additions in the film negative plugin, namely film base sampling/subtraction. It's not that it's impossible to get good results with 5.8, just 5.9 is so much better. The walkthrough assumes you use 5.9.
 1. Actually, at the time I'm writing this, there's no final 5.9 yet, but if you use Windows or Linux you can get nightly builds of release candidate, follow guidelines on the [official site](https://rawpedia.rawtherapee.com/Download) (Development builds). Unfortunately, for Mac there are no such automated nightly builds available and I have to use [VirtualBox](https://www.virtualbox.org) with Linux installed where I built release candidate of RawTherapee from sources, you can do the same. In any case, by the time you are reading this, 5.9 is probably released anyway.
@@ -150,7 +151,11 @@ Here I list some tips that didn't find their way into the main text.
 - If you can't get some photo to look correct after pasting color coefficients from another photo, it can be a sign that either of the photos was over/underexposed. Try resampling grays on the photo where you can't get correct colors.
 - One last measure to use to get good colors (but only after you've exhausted all the other ways) is to use Lab color space editing in RawTherapee. There you can selectively remap colors, e.g. turn reds to greens etc. RawTherapee provides really advanced tools for this.
 
+# Conclusion
+If you're interested, the photos were digitized using with manual Micro Nikkor AI-S 55/2.8 lens set on Nikon D750, mounted on a macro rail for precise focusing. Film was backlit with Nanguang CN-T96 video light which you can get non-expensively at Aliexpress or eBay.
+
 I hope you will enjoy RawTherapee! Please leave some comments below if my article has helped you. I will try to answer any questions too.
 Be sure to check my gallery on this site, it contains other conversions from RawTherapee.
+Maybe one day I'll also describe my home-built scanning rig in another article.
 
-P.S. Big thanks for Sroyon Mukherjee who liked my initial conversion results & suggested me to write the article. You can read his articles for [35mmc.com here](https://www.35mmc.com/author/sroyon/).
+P.S. Big thanks for *Sroyon Mukherjee* who liked my initial conversion results & suggested me to write the article. You can read his articles for [35mmc.com here](https://www.35mmc.com/author/sroyon/).
