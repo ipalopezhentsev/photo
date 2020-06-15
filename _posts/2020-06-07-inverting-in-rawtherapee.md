@@ -9,7 +9,7 @@ A picture is worth a thousand words so let me just show one and say that after y
 ![ImageStart](/photo/assets/images/articles/inverting-in-rt/Start.jpg)
 If you're impressed, read on!
 
-# My perspective
+## My perspective
 First, a couple of words on my background so you understand my perspective better. I started shooting film in 2006 and was scanning myself since 2010 using Plustek 7600. There was a pause in 2011-2016 but since then I'm back in the film game, actively shooting it and using both labs and scanning at home. As you know, inversion of color negatives can be tricky. Over the years I've used the following software for doing it:
 * Silverfast
 * Vuescan
@@ -19,7 +19,7 @@ In the process I've ditched the Plustek and switched to DSLR scanning using Niko
 
 All of this ended when I've discovered free (open source actually) raw converter [RawTherapee](www.rawtherapee.com) which has negative inversion tool built in. I've realized that now I'm able to get the results that actually look better than all of the tools above and I'm doing fine without them.
 
-# Introduction
+## Introduction
 The program offers the following key advantages when working with DSLR-scanned color negatives:
 - The negative tool in RawTherapee is not a plugin, it's a fully native built-in tool so it's not working within the limits of the host software's plugin API, like Lightroom based solutions do. It means that after you've applied the negative inversion to your RAW, all the other controls of RawTherapee work like they should as if the picture was originally positive, i.e. not in inverted way. E.g. when you work with white balance, you work with native positive values, not with white balance of orange negative mask, the same goes with curves & other adjustments.
 - The negative tool uses interesting approach for its work. It's based not on blindly analyzing/guessing what the inverted image should look like without any input from your side - it uses math to deduce the correct color correction coefficients based on two sample points *you* specify that *you* want to treat as being neutral gray. Sure, I know Silverfast HDR has something similar when you can pick up to 4 neutral points and Vuescan has its right click for selecting middle gray, but in my practice RawTherapee still works better.
@@ -34,7 +34,7 @@ Of course, RawTherapee is not a silver bullet, and currently it has the followin
 
 That being said, none of the above affects me much so it's perfectly usable as is. And it being open source means anyone with programming knowledge can help out the community ;)
 
-# A bit of theory
+## A bit of theory
 Here is a brief description of how negative inversion in RawTherapee works. It's important to read it to better understand the principles. Fuller description is in the [forum thread](https://discuss.pixls.us/t/any-interest-in-a-film-negative-feature-in-rt/12569) by the developer of the tool (rom9).
 
 Negative inversion can look deceptively easily. Say, you represent brightness of negative (say, for a red channel) with values 0-255. Then, given a brightness with level v on negative, what should the inverted positive brightness be? A naive approach would say it's 255 - v. But film doesn't react in this linear way. Instead, it's exponential: k*(1/v)^p. And those k's and p's are different for color channels R, G and B. If you find them, you can do the inversion based on the real physics of the film. To do this, you should give the program two points for which you know for sure they are neutral gray, then it builds system of equations and finds the k's and p's so the points in the inverted color space are really neutral gray. The points should be of brightness different enough (say, neutral black and neutral gray), otherwise film grain, which brings a source of error into the equations, will skew the coefficients, as the two points will be too close numerically and so any small random noise from grain will introduce large errors into the answer.
@@ -56,7 +56,7 @@ Also important is to not confuse these coefficients with white balance, they are
 
 The last bit is color of the film base. To get good result with no color casts, you have to take yet another sample once for a roll, that of the film base (i.e. unexposed space between two frames). The program will then subtract it after the inversion so the blacks stay truly black and not, say, dark green.
 
-# Workflow overview
+## Workflow overview
 Now that you understand the theory behind it, let's come to practice. I've converted about 25 35mm rolls with RawTherapee already and have converged on the method I describe below. Maybe with time I will rethink some of the steps. Maybe you will find some better ways and post in the comments!
 
 So, the procedure of converting a roll consists of:
@@ -65,7 +65,7 @@ So, the procedure of converting a roll consists of:
 1. Converting this frame perfectly
 1. Copy-pasting the settings from this frame to all the other frames for getting 'base' conversion and then making individual fine-tuning for every frame.
 
-# About flat field correction
+### About flat field correction
 One of the special frames you will have to capture as you go digitizing your roll is a flat field frame. It's important to understand what it is.
 
 The setup of most amateur rigs for DSLR-digitizing is not perfect and there are several sources of problems. First, there is uneven lighting. The corners of the film frame may receive a bit less or a bit more light due to set up of your light source behind the film or the way it's centered. Or, say, your rig stays close to window and gets some side-light. Or, if you digitize in the evening, your room lamp light gets in from some wall reflection. Second, your DSLR lens has vignetting too and when you capture negatives and then invert them, the darkening of borders due to vignetting transforms to brightening of corners which looks bad.
@@ -78,7 +78,7 @@ Now that you have a flat field frame, you can apply it in image processing progr
 
 RawTherapee has great support of flat fields, much better than in Lightroom for example. When you apply flat field in Lightroom it cannot do it inside your RAW and make it a 'layer' which you can enable/disable. No, it can only create another DNG file, which contains the result. Also I've seen several times it stumbles on some of the RAWs and inverts them with errors, making the colors really screwed for this and all the following frames. If you've already deleted the original RAWs, no luck for you. Unlike Lightroom, RawTherapee makes application of flat field totally non-destructive. It doesn't create any new file, it's just a correction on top of your image which you can disable.
 
-# Workflow walkthrough
+## Workflow walkthrough
 
 Now I'm going to walk you through the conversion of two frames on one roll of Kodak ProImage 100 film, so you see the procedure. If you have experience with it, you will agree with me that ProImage is quite quirky film, which can be tricky to get good colors from, its negative mask has distinctly different color than other films (it's more magenta, not red-brown like others) and I guess this fools many programs. All the better for RawTherapee! You'll see it handles it good.
 
@@ -88,7 +88,7 @@ Let's split the workflow in two stages:
 
 For the conversion stage, I will give you my RAWs so you can just follow along.
 
-## DSLR shooting stage
+### DSLR shooting stage
 For using the conversion stage workflow below it is assumed you take the following DSLR shooting stage steps.
 
 1. Choose software for capturing. I use free [qDslrDashboard](https://dslrdashboard.info/introduction/). It provides full tether, with 1:1 live view/auto transfer to PC.
@@ -97,7 +97,7 @@ For using the conversion stage workflow below it is assumed you take the followi
 1. Take a shot between two frames on a roll, so that film base between them goes through the center of a DSLR frame. We need it for sampling film base color so that it can be subtracted to remove wrong color casts. Why leave film base closer to the middle of DSLR frame? To neutralize bad effects of lens/light system on the edges - we want as 'honest' film base as we can. Let's call this frame *"Frame FB"*.
 1. Shoot all the frames on the roll. You don't have to include film base now - you've already taken it. Let's call this group of frames *"Frames C"*. In my practice, I usually shoot on f11, to get okayish resolution across the frame, but for really good frames I take another approach - I switch to f5.6 and take several photos of one film frame, each time carefully refocusing to different parts of the frame, e.g. one frame is focused in the center of film, another is focused in the corner. Then I process them identically and use focus stacking software to get much better image, which has uniform resolution across the frame. The reality is neither macro lenses have perfectly flat field nor is your film really flat and level. You can either don't care about it and be fine with 'good-enough' or you may take it to the max with focus stack when you need.
 
-## Conversion stage
+### Conversion stage
 
 The description below assumes you followed the steps in the DSLR shooting stage described above.
 Don't be intimidated by the apparent length of the steps below, I'm just explaining it in all details so you can get to good result on your own frames and don't miss some important thing. The main idea that I'm going to show is to do correct conversion of just one frame which you then can copy over to all the rest on the roll. After a couple of rolls you will get proficient at it.
@@ -121,7 +121,12 @@ Don't be intimidated by the apparent length of the steps below, I'm just explain
 ![After sampling](/photo/assets/images/articles/inverting-in-rt/trg-after-sampling.png)
 1. Select the Spot White Balance tool (shortcut "w") and click the gray area you used for color sampling. The colors improve, but are still not quite there. You may find you need to correct WB manually. For this picture, I've chosen WB to be 3150/1.052:
 ![After WB (crop)](/photo/assets/images/articles/inverting-in-rt/trg-after-wb-crop.png)
-1. Now we need to edit exposure and it will also remove the remaining color casts. Go to the Exposure tab. There you have two possibilities: a) Use common sliders like Exposure/Contrast/Black etc, b) Use the curves. While the former may seem more intuitive at first, resist the temptation and don't use them! For this particular task of negative inversion, I've found the curves give much better precision/control so I recommend using them straight away instead of using the common sliders first only to find out you need to reconvert all your photos to use the curves anyway (I'm talking about myself here!).
+1. Now we need to edit exposure and it will also remove the remaining color casts. Go to the Exposure tab. There you have two possibilities: 
+
+   - Use common sliders like Exposure/Contrast/Black etc
+   - Use the curves
+ 
+    While the former may seem more intuitive at first, resist the temptation and don't use them! For this particular task of negative inversion, I've found the curves give much better precision/control so I recommend using them straight away instead of using the common sliders first only to find out you need to reconvert all your photos to use the curves anyway (I'm talking about myself here!).
 Unique point of RawTherapee is that it provides not one but two curves! And this comes very handy for our task. We'll set the first curve to be simple linear scaler, trimming the histogram to the actually used range of brightnesses in your frame.
 1. So reset the 'auto-matched' curve RawTherapee has by default, and choose 'Standard' from the dropdown for the Curve 1. You will need just two control points on it.
 ![Set curve 1](/photo/assets/images/articles/inverting-in-rt/trg-set-curve1.png)
@@ -129,19 +134,25 @@ Unique point of RawTherapee is that it provides not one but two curves! And this
 ![After curve 1](/photo/assets/images/articles/inverting-in-rt/trg-after-curve1.png)
 1. After you've edited the Curve 1 in the way shown above the colors finally look correct! At this stage you may want to edit the white balance again using manual sliders, sometimes small nudge here and there greatly improves the result.
 1. Now that we have the colors correct, we have Curve 2 at our disposal, which comes into effect after Curve 1, it's a way to control the tones distribution - here you can edit stuff like contrast/lightness/black/shadow compression. Here it's entirely dependent on the particular photo and what you want to say with it. The more you practice the better you will be at judging what curve a particular photo needs. The only tips I have here are:
-1.1. For consistency, always have your Curve 2 starting in the bottom left corner and ending at the upper right corner. I.e. subtract empty space in the histogram via Curve 1 only.
-1.1. Don't cause it to clip. If you see such clipping, then make the points a bit lower so it goes away. Try to find such position of control points so that the curve is not clipping but the image still looks brighter if that's your taste. For that, you may have to compensate with Curve 1. Here's how I've ended up with the curve 2:
+    1. For consistency, always have your Curve 2 starting in the bottom left corner and ending at the upper right corner. I.e. subtract empty space in the histogram via Curve 1 only.
+    2. Don't cause it to clip. If you see such clipping, then make the points a bit lower so it goes away. Try to find such position of control points so that the curve is not clipping but the image still looks brighter if that's your taste. For that, you may have to compensate with Curve 1. 
+ 
+    Here's how I've ended up with the curve 2:
 ![After curve 2](/photo/assets/images/articles/inverting-in-rt/trg-after-curve2.png)
 1. So after you've edited Curve 2 the picture is almost ready. You can crop it to taste and/or do further edits. Here's my final result:
 ![FinalImage1](/photo/assets/images/articles/inverting-in-rt/Dslr0006.jpg)
 1. Note that unlike approaches taken with some other popular programs, you don't have to export your file to TIFF now (which is ~3x bigger than the original RAW by the way) just to be able to do the further corrections. RawTherapee has lots of great tools, e.g. Lab color editing where you can change colors individually if you dislike something. The good thing is all controls work in direct way, at this stage there's very little left visible of the fact the original RAW was negative, but it still is negative on disk! And the controls all work just on the original RAW, not on some copy increasing disk space!
-The only real need to export the file to TIFF appears if you want to: a) Use spot healing brush from Photoshop/other programs. Unfortunately, there's no such tool in RawTherapee now; b) Use focus stacking to improve corner resolution
-1. So, we've processed just one frame. Now you're maybe thinking whether you have to sit through the whole roll doing the same stuff. No! You've done the great part already! When you are totally happy with one frame, just select it in the filmstrip, press Ctrl/Cmd-C, then select next frame having just baseline conversion and press Ctrl/Cmd-V on it (copying/pasting the "processing profile" in RawTherapee's parlance). Then double click on the image you've pasted the settings to and apply just minimal edits which are needed because it's, well, another frame with its own histogram - you need to touch just: a) Curve 1 and Curve 2; b) White balance
-1. So for example here I've applied the above copying for the next frame `Dslr0012.NEF` and just edited WB a bit:
+The only real need to export the file to TIFF appears if you want to: 
+   - Use spot healing brush from Photoshop/other programs. Unfortunately, there's no such tool in RawTherapee now
+   - Use focus stacking to improve corner resolution
+1. So, we've processed just one frame. Now you're maybe thinking whether you have to sit through the whole roll doing the same stuff. No! You've done the great part already! When you are totally happy with one frame, just select it in the filmstrip, press Ctrl/Cmd-C, then select next frame having just baseline conversion and press Ctrl/Cmd-V on it (copying/pasting the "processing profile" in RawTherapee's parlance). Then double click on the image you've pasted the settings to and apply just minimal edits which are needed because it's, well, another frame with its own histogram - you need to touch just:
+   - Curve 1 and Curve 2
+   - White balance
+1. For example, here I've applied the above copying for the next frame `Dslr0012.NEF` and just edited WB a bit:
 ![FinalImage2](/photo/assets/images/articles/inverting-in-rt/Dslr0012.jpg)
 1. Usually you *don't* have to change anything else. 'Usually' means there may appear some frames, often under or overexposed, that require touching the color coefficients first, over time you will recognise such frames and the direction in which you need to nudge the coefficients to bring colors back to good starting point.
 
-# Some closing tips
+### Some tips
 Here I list some tips that didn't find their way into the main text.
 - If you find that after sampling gray tones your neutral grays look correct but the highlights are not, e.g. they like to turn rose if they are significantly overexposed, then just try to nudge exponents. For rose/magenta highlights, decreasing the `Blue ratio` a bit helps. Magenta shadows is a sign of too small `Blue ratio`, nudge it up a bit.
 - For curve 2, I've found the best number of control points is 4, two are in the corners, the other two control contrast etc. It's amazing what you can do with just two points! Just ensure that no matter you do there are no clippings on the Curve 2 and also on the histogram.
@@ -151,7 +162,7 @@ Here I list some tips that didn't find their way into the main text.
 - If you can't get some photo to look correct after pasting color coefficients from another photo, it can be a sign that either of the photos was over/underexposed. Try resampling grays on the photo where you can't get correct colors.
 - One last measure to use to get good colors (but only after you've exhausted all the other ways) is to use Lab color space editing in RawTherapee. There you can selectively remap colors, e.g. turn reds to greens etc. RawTherapee provides really advanced tools for this.
 
-# Conclusion
+## Conclusion
 If you're interested, all the photos in this article were shot with Nikon F100/Nikkor AF-S 28/1.8G and were digitized using manual Micro Nikkor AI-S 55/2.8 lens set on Nikon D750, mounted on a macro rail for precise focusing. Film was backlit with Nanguang CN-T96 video light which you can get non-expensively at Aliexpress or eBay.
 
 I hope you will enjoy RawTherapee! Please leave some comments below if my article has helped you. I will try to answer any questions too.
