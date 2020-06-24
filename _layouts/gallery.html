@@ -12,8 +12,9 @@ layout: default
       <a href="{{img.image.url}}">
         <!--img: thumbnail-->
         {% if jekyll.environment == "production" %}
-        {% capture thumb_url %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{page.folder}}/{{img.image.url}}&w={{site.gallery_width}}{% endcapture %}
-        <img src="{{thumb_url}}" alt="{{img.image.description}}"/>
+        <!--note times:2 - it's for high dpi retina screens, i.e. img tag has size X while underlying image has 2X-->
+        {% capture thumb_url %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{page.folder}}/{{img.image.url}}&w={{site.gallery_width | times: 2}}{% endcapture %}
+        <img src="{{thumb_url}}" alt="{{img.image.description}}" width="{{site.gallery_width}}"/>
         {% else %}
         <img src="{{img.image.url}}" alt="{{img.image.description}}" width="{{site.gallery_width}}"/>
         {% endif %}
