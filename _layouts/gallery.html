@@ -5,11 +5,12 @@ layout: default
   <h1 class="page-title">{{ page.title }}</h1>
   <div>{{page.description}}</div>
   <small>Click on an image to open it in full size</small>
+
   <div>
     {% for img in page.images %}
     <figure>
       <!--link: full image-->
-      <a href="{{img.image.url}}">
+      <a class="my-popup-link" href="{{img.image.url}}">
         <!--img: thumbnail-->
         {% if jekyll.environment == "production" %}
         <!--note times:2 - it's for high dpi retina screens, i.e. img tag has size X while underlying image has 2X-->

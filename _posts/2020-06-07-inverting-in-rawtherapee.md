@@ -7,7 +7,9 @@ categories: rawtherapee software
 ---
 A picture is worth a thousand words so let me just show one and say that after you've read this article, you'll know how to get such digital camera scans from your color negative film using just freely available software:
 <!--TODO: you can include any html class and run js lightbox!-->
-<img src="/photo/assets/images/articles/inverting-in-rt/Start.jpg" width="900"/>
+<a class="my-popup-link" href="{{site.baseurl}}/galleries/landscapes/1907-1908-1-forest.jpg">
+<img src="{{site.baseurl}}/assets/images/articles/inverting-in-rt/Start.jpg" width="900"/>
+</a>
 If you're impressed, read on!
 
 ## My perspective
@@ -105,23 +107,23 @@ Don't be intimidated by the apparent length of the steps below, I'm just explain
 
 1. First of all, ensure you have RawTherapee 5.9, not earlier versions, because there were important additions in the film negative plugin, namely film base sampling/subtraction. It's not that it's impossible to get good results with 5.8, just 5.9 is so much better. The walkthrough assumes you use 5.9.
 1. Actually, at the time I'm writing this, there's no final 5.9 yet, but if you use Windows or Linux you can get nightly builds of release candidate, follow guidelines on the [official site](https://rawpedia.rawtherapee.com/Download) (Development builds). Unfortunately, for Mac there are no such automated nightly builds available and I have to use [VirtualBox](https://www.virtualbox.org) with Linux installed where I built release candidate of RawTherapee from sources, you can do the same. In any case, by the time you are reading this, 5.9 is probably released anyway.
-1. Open folder where you saved the photos. One of the great things I like about RawTherapee is there is no catalog. You just navigate to the folder where you have your images and start editing. All the edits you do are saved in the sidecar `*.pp3` files near the images. So, click the File Browser tab in the left upper corner, navigate to your folder with images and double click it. The thumbnails will appear, find the *"Frame FB"*, the one that has film base running in the middle, and double click it. It will open in the full view, switching the active tab to Editor. [Here](/photo/assets/images/articles/inverting-in-rt/Dslr0001.NEF) you can download my *"Frame FB"*.
-1. Assign flat field file to it. In order to do this, go to `Raw -> Flat field -> File` and choose the file from the group *"Frames FF"* you shot before, that has the same aperture as *"Frame FB"*. [Here](/photo/assets/images/articles/inverting-in-rt/Dslr0002.NEF) you can download my flat field.
-![Assign flat field](/photo/assets/images/articles/inverting-in-rt/trg-flat-field.png)
+1. Open folder where you saved the photos. One of the great things I like about RawTherapee is there is no catalog. You just navigate to the folder where you have your images and start editing. All the edits you do are saved in the sidecar `*.pp3` files near the images. So, click the File Browser tab in the left upper corner, navigate to your folder with images and double click it. The thumbnails will appear, find the *"Frame FB"*, the one that has film base running in the middle, and double click it. It will open in the full view, switching the active tab to Editor. [Here]({{site.baseurl}}/assets/images/articles/inverting-in-rt/Dslr0001.NEF) you can download my *"Frame FB"*.
+1. Assign flat field file to it. In order to do this, go to `Raw -> Flat field -> File` and choose the file from the group *"Frames FF"* you shot before, that has the same aperture as *"Frame FB"*. [Here]({{site.baseurl}}/assets/images/articles/inverting-in-rt/Dslr0002.NEF) you can download my flat field.
+![Assign flat field]({{site.baseurl}}/assets/images/articles/inverting-in-rt/trg-flat-field.png)
 1. Our next goal is to sample the film base color. For that, go to `Raw -> Film negative` and click `Pick film base color`, the mouse cursor will turn to color picker, click on the film base in the middle of the frame (in my sample image it's in the left corner actually). The negative tool panel updates with values under label "Film base RGB".
-![Pick film base](/photo/assets/images/articles/inverting-in-rt/trg-base-sampling.png)
+![Pick film base]({{site.baseurl}}/assets/images/articles/inverting-in-rt/trg-base-sampling.png)
 1. Enable the film negative mode. For that, go to `Raw -> Film Negative` and click on the circle before the `Film Negative` label. The picture turns into positive but with very bad colors. Don't worry about this for now. 
-![Enable inversion](/photo/assets/images/articles/inverting-in-rt/trg-enable-inversion.png)
-1. So you have the baseline conversion, let's apply it to all the frames from the group *"Frames C"*. For this, select the current frame you're editing in the film strip at the top and press Ctrl-C or Cmd-C depending on your computer. Then select all the other frames from the group *"Frames C"* (i.e. all frames except the flat field and the film base ones) in the film strip and press Ctrl/Cmd-V. The thumbnails will be updated with positive pictures. I'm giving you two raw's from this roll which we'll be converting, [Dslr0006.NEF](/photo/assets/images/articles/inverting-in-rt/Dslr0006.NEF) and [Dslr0012.NEF](/photo/assets/images/articles/inverting-in-rt/Dslr0012.NEF)
-![Copy baseline](/photo/assets/images/articles/inverting-in-rt/trg-copy-baseline.png)
+![Enable inversion]({{site.baseurl}}/assets/images/articles/inverting-in-rt/trg-enable-inversion.png)
+1. So you have the baseline conversion, let's apply it to all the frames from the group *"Frames C"*. For this, select the current frame you're editing in the film strip at the top and press Ctrl-C or Cmd-C depending on your computer. Then select all the other frames from the group *"Frames C"* (i.e. all frames except the flat field and the film base ones) in the film strip and press Ctrl/Cmd-V. The thumbnails will be updated with positive pictures. I'm giving you two raw's from this roll which we'll be converting, [Dslr0006.NEF]({{site.baseurl}}/assets/images/articles/inverting-in-rt/Dslr0006.NEF) and [Dslr0012.NEF]({{site.baseurl}}/assets/images/articles/inverting-in-rt/Dslr0012.NEF)
+![Copy baseline]({{site.baseurl}}/assets/images/articles/inverting-in-rt/trg-copy-baseline.png)
 1. Why have we done this? So you can choose a frame that has significant areas with several distinct shades of neutral gray (say, neutral white and neutral black). We'll sample them to get good color. This is the most important step actually. You may find in the end you chose a bad frame for sampling and will have to find another. So, let's suppose you've found the frame (for our two frames, I've picked the one named `Dslr0006.NEF`, because it has nice black-and-white bus which we can sample gray points from). Double click it in the film strip to make it the current one for editing. When it opens, choose `Raw -> Film Negative` and click `Pick neutral spots`. The cursor will turn to color picker. You have to click the two gray shades one after another. Order does not matter. So, either bright gray first then dark gray or vice versa. Don't choose two shades that are close to each other in brightness - due to film grain and other factors, the program will have much noisier source signal affecting precision of calculations and so worse final colors.
-![Sample gray (zoom out)](/photo/assets/images/articles/inverting-in-rt/trg-sampling-zoom-out.png)
+![Sample gray (zoom out)]({{site.baseurl}}/assets/images/articles/inverting-in-rt/trg-sampling-zoom-out.png)
 1. To increase precision of choosing gray areas, you can double click the image to zoom it, before clicking `Pick neutral spots`. Let's suppose we chose the following gray areas:
-![Sample gray (zoom in)](/photo/assets/images/articles/inverting-in-rt/trg-sampling-zoom-in.png)
+![Sample gray (zoom in)]({{site.baseurl}}/assets/images/articles/inverting-in-rt/trg-sampling-zoom-in.png)
 1. After you've done two clicks, the program will use them to calculate three color coefficients (`Reference exponent`, `Red ratio`, `Blue ratio`) and update them in the UI. The colors will look more correct but still not entirely - but we are on our way!
-![After sampling](/photo/assets/images/articles/inverting-in-rt/trg-after-sampling.png)
+![After sampling]({{site.baseurl}}/assets/images/articles/inverting-in-rt/trg-after-sampling.png)
 1. Select the Spot White Balance tool (shortcut "w") and click the gray area you used for color sampling. The colors improve, but are still not quite there. You may find you need to correct WB manually. For this picture, I've chosen WB to be 3150/1.052:
-![After WB (crop)](/photo/assets/images/articles/inverting-in-rt/trg-after-wb-crop.png)
+![After WB (crop)]({{site.baseurl}}/assets/images/articles/inverting-in-rt/trg-after-wb-crop.png)
 1. Now we need to edit exposure and it will also remove the remaining color casts. Go to the Exposure tab. There you have two possibilities: 
 
    - Use common sliders like Exposure/Contrast/Black etc
@@ -130,18 +132,20 @@ Don't be intimidated by the apparent length of the steps below, I'm just explain
     While the former may seem more intuitive at first, resist the temptation and don't use them! For this particular task of negative inversion, I've found the curves give much better precision/control so I recommend using them straight away instead of using the common sliders first only to find out you need to reconvert all your photos to use the curves anyway (I'm talking about myself here!).
 Unique point of RawTherapee is that it provides not one but two curves! And this comes very handy for our task. We'll set the first curve to be simple linear scaler, trimming the histogram to the actually used range of brightnesses in your frame.
 1. So reset the 'auto-matched' curve RawTherapee has by default, and choose 'Standard' from the dropdown for the Curve 1. You will need just two control points on it.
-![Set curve 1](/photo/assets/images/articles/inverting-in-rt/trg-set-curve1.png)
+![Set curve 1]({{site.baseurl}}/assets/images/articles/inverting-in-rt/trg-set-curve1.png)
 1. Then you look at histogram beneath Curve 1 and move control points to limit it - usually I align the left control point with the beginning of the histogram but leave a bit of breathing space near the highlights for the right control point. It's important to protect the highlights from clipping, as it's a unique feature of the negative film and you'll be amazed at how much detail is preserved there compared to the regular digital capture!
-![After curve 1](/photo/assets/images/articles/inverting-in-rt/trg-after-curve1.png)
+![After curve 1]({{site.baseurl}}/assets/images/articles/inverting-in-rt/trg-after-curve1.png)
 1. After you've edited the Curve 1 in the way shown above the colors finally look correct! At this stage you may want to edit the white balance again using manual sliders, sometimes small nudge here and there greatly improves the result.
 1. Now that we have the colors correct, we have Curve 2 at our disposal, which comes into effect after Curve 1, it's a way to control the tones distribution - here you can edit stuff like contrast/lightness/black/shadow compression. Here it's entirely dependent on the particular photo and what you want to say with it. The more you practice the better you will be at judging what curve a particular photo needs. The only tips I have here are:
     1. For consistency, always have your Curve 2 starting in the bottom left corner and ending at the upper right corner. I.e. subtract empty space in the histogram via Curve 1 only.
     2. Don't cause it to clip. If you see such clipping, then make the points a bit lower so it goes away. Try to find such position of control points so that the curve is not clipping but the image still looks brighter if that's your taste. For that, you may have to compensate with Curve 1. 
  
     Here's how I've ended up with the curve 2:
-![After curve 2](/photo/assets/images/articles/inverting-in-rt/trg-after-curve2.png)
+![After curve 2]({{site.baseurl}}/assets/images/articles/inverting-in-rt/trg-after-curve2.png)
 1. So after you've edited Curve 2 the picture is almost ready. You can crop it to taste and/or do further edits. Here's my final result:
-<img src="/photo/assets/images/articles/inverting-in-rt/Dslr0006.jpg" width="900"/>
+<a class="my-popup-link" href="{{site.baseurl}}/galleries/cityscapes/1906-1-posad-main-square.jpg">
+<img src="{{site.baseurl}}/assets/images/articles/inverting-in-rt/Dslr0006.jpg" width="900"/>
+</a>
 1. Note that unlike approaches taken with some other popular programs, you don't have to export your file to TIFF now (which is ~3x bigger than the original raw by the way) just to be able to do the further corrections. RawTherapee has lots of great tools, e.g. Lab color editing where you can change colors individually if you dislike something. The good thing is all controls work in direct way, at this stage there's very little left visible of the fact the original raw was negative, but it still is negative on disk! And the controls all work just on the original raw, not on some copy increasing disk space!
 The only real need to export the file to TIFF appears if you want to: 
    - Use spot healing brush from Photoshop/other programs. Unfortunately, there's no such tool in RawTherapee now
@@ -150,7 +154,9 @@ The only real need to export the file to TIFF appears if you want to:
    - Curve 1 and Curve 2
    - White balance
 1. For example, here I've applied the above copying for the next frame `Dslr0012.NEF` and just edited WB a bit:
-<img src="/photo/assets/images/articles/inverting-in-rt/Dslr0012.jpg" width="750"/>
+<a class="my-popup-link" href="{{site.baseurl}}/galleries/cityscapes/1906-1-posad-trapeznaya.jpg">
+<img src="{{site.baseurl}}/assets/images/articles/inverting-in-rt/Dslr0012.jpg" width="750"/>
+</a>
 1. Usually you *don't* have to change anything else. 'Usually' means there may appear some frames, often under or overexposed, that require touching the color coefficients first, over time you will recognise such frames and the direction in which you need to nudge the coefficients to bring colors back to good starting point.
 
 ### Some tips

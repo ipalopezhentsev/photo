@@ -36,23 +36,23 @@
   </div>
 
 <script src='{{ site.baseurl }}/public/js/script.js'></script>
-<!--for bootstrap:-->
-<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
-<!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>-->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="{{site.baseurl}}/public/js/jquery.magnific-popup.min.js"></script>
 
 <script>
-  var allImages = document.getElementsByTagName('img');
-
-  for(var i = 0; i < allImages.length ; i++) {
-    //TODO: wrap in <a> and attach lightbox. 10 best:
-    //https://www.hongkiat.com/blog/responsive-lightbox-library/
-    // console.log(allImages[i].style.width);
-    // to open all photos in new tabs:
-    // window.open(allImages[i].src, '_blank');
-    // allImages[i].src = 'url_to_cat_image';
-  }
+  $(document).ready(function() {
+    //assign class "my-popup-link" to any <a> with href pointing to big image and content inside it will have lightbox!
+    $('.my-popup-link').magnificPopup({
+      type: 'image',
+      closeOnContentClick: true
+      // other options
+    });
+  });
 </script>
+
+<!--for bootstrap:-->
+<!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>-->
 
 </body>
 </html>
