@@ -7,7 +7,7 @@ categories: rawtherapee software
 ---
 A picture is worth a thousand words so let me just show one and say that after you've read this article, you'll know how to get such digital camera scans from your color negative film using just freely available software:
 <!--TODO: you can include any html class and run js lightbox!-->
-<a class="my-popup-link" href="{{site.baseurl}}/galleries/landscapes/1907-1908-1-forest.jpg">
+<a class="my-popup-link" href="{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/landscapes/1907-1908-1-forest.jpg&h={{site.gallery_full_view_height}}">
 <img src="{{site.baseurl}}/assets/images/articles/inverting-in-rt/Start.jpg" width="900"/>
 </a>
 If you're impressed, read on!
@@ -143,7 +143,7 @@ Unique point of RawTherapee is that it provides not one but two curves! And this
     Here's how I've ended up with the curve 2:
 ![After curve 2]({{site.baseurl}}/assets/images/articles/inverting-in-rt/trg-after-curve2.png)
 1. So after you've edited Curve 2 the picture is almost ready. You can crop it to taste and/or do further edits. Here's my final result:
-<a class="my-popup-link" href="{{site.baseurl}}/galleries/cityscapes/1906-1-posad-main-square.jpg">
+<a class="my-popup-link" href="{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/cityscapes/1906-1-posad-main-square.jpg&h={{site.gallery_full_view_height}}">
 <img src="{{site.baseurl}}/assets/images/articles/inverting-in-rt/Dslr0006.jpg" width="900"/>
 </a>
 1. Note that unlike approaches taken with some other popular programs, you don't have to export your file to TIFF now (which is ~3x bigger than the original raw by the way) just to be able to do the further corrections. RawTherapee has lots of great tools, e.g. Lab color editing where you can change colors individually if you dislike something. The good thing is all controls work in direct way, at this stage there's very little left visible of the fact the original raw was negative, but it still is negative on disk! And the controls all work just on the original raw, not on some copy increasing disk space!
@@ -154,7 +154,7 @@ The only real need to export the file to TIFF appears if you want to:
    - Curve 1 and Curve 2
    - White balance
 1. For example, here I've applied the above copying for the next frame `Dslr0012.NEF` and just edited WB a bit:
-<a class="my-popup-link" href="{{site.baseurl}}/galleries/cityscapes/1906-1-posad-trapeznaya.jpg">
+<a class="my-popup-link" href="{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/cityscapes/1906-1-posad-trapeznaya.jpg&h={{site.gallery_full_view_height}}">
 <img src="{{site.baseurl}}/assets/images/articles/inverting-in-rt/Dslr0012.jpg" width="750"/>
 </a>
 1. Usually you *don't* have to change anything else. 'Usually' means there may appear some frames, often under or overexposed, that require touching the color coefficients first, over time you will recognise such frames and the direction in which you need to nudge the coefficients to bring colors back to good starting point.
