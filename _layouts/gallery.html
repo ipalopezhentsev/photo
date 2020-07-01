@@ -9,17 +9,20 @@ layout: default
   <div>
     {% for img in page.images %}
     <figure>
+      {% if jekyll.environment == "production" %}
       <!--link: full image-->
+      {% capture full_url%}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{page.folder}}/{{img.image.url}}&h={{site.gallery_full_view_height}}{% endcapture %}
       <a class="my-popup-link" href="{{img.image.url}}">
         <!--img: thumbnail-->
-        {% if jekyll.environment == "production" %}
         <!--note times:2 - it's for high dpi retina screens, i.e. img tag has size X while underlying image has 2X-->
-        {% capture thumb_url %}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{page.folder}}/{{img.image.url}}&w={{site.gallery_width | times: 2}}{% endcapture %}
+        {% capture thumb_url%}{{site.weserve_url}}{{site.url}}{{site.baseurl}}/galleries/{{page.folder}}/{{img.image.url}}&w={{site.gallery_width| times: 2}}{% endcapture %}
         <img src="{{thumb_url}}" alt="{{img.image.description}}" width="{{site.gallery_width}}"/>
-        {% else %}
-        <img src="{{img.image.url}}" alt="{{img.image.description}}" width="{{site.gallery_width}}"/>
-        {% endif %}
       </a>
+      {% else %}
+      <a class="my-popup-link" href="{{img.image.url}}">
+        <img src="{{img.image.url}}" alt="{{img.image.description}}" width="{{site.gallery_width}}"/>
+      </a>
+      {% endif %}
       <figcaption>{{img.image.d}}</figcaption>
 
       {% if img.image.p %}
