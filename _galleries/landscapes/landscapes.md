@@ -12,12 +12,24 @@ images:
       tw: Nikon F100, AF-S 28/1.8G, Agfa Vista 200, digitized with Nikon D750 and RawTherapee 5.9
       dt: 2019
       p: Moscow
+  - image:
+      url: 1803-1805-2-biryulevo-pond.jpg
+      d: Pond in an arboretum
+      tw: Nikon F100, AF-S 50/1.4G, polarizing filter, Agfa Vista 200, digitized with Nikon D750 and RawTherapee 5.9
+      dt: 2018
+      p: Moscow
   - image: 
       url: 2001-1-ivanteevka-trees.jpg
       d: Moderately sunny & cold winter afternoon
       dt: 2020
       p: Ivanteevka, near Moscow 
       tw: Nikon F100, AF-S 24-120/4G, Fuji Pro 400H, digitized with Nikon D750 and RawTherapee 5.9
+  - image:
+      url: 1803-1805-1-kolomenskoe-fence.jpg
+      d: Fence in a city park
+      tw: Nikon F100, AF-S 24-120/4G, polarizing filter, Agfa Vista 200, digitized with Nikon D750 and RawTherapee 5.9
+      dt: 2018
+      p: Moscow
   - image:
       url: 1907-1908-1-pokrovskoe.jpg
       d: A city park
